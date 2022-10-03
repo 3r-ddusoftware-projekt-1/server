@@ -2,8 +2,13 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 const data = require("./routes/data.js");   // Load js to insert and get data from db
+const api = require("./routes/api.js");
+const bodyParser = require('body-parser');
+
 
 express()
+    .use(bodyParser.urlencoded({ extended: false }))
+    .use(bodyParser.json())
     .use(express.static(path.join(__dirname, "public")))        // Make files in public folder available
-    .use("/data", data)                                         // Use instructions in data.js at url: <your-app-name>.herokuapp.com/data
+    .use("/api", api)
     .listen(PORT, () => console.log(`Listening on ${PORT}`));   // Start server 
