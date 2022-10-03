@@ -9,7 +9,8 @@ router.post("/upload_data", async (req, res) => {
 
         // Request validation
         if (body.timestamp === undefined) {
-            res.status(400).json({success: false})
+            res.status(400).json({success: false});
+            return;
         }
 
         res.json(
