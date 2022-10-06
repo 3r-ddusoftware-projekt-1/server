@@ -5,10 +5,9 @@ const data = require("./routes/data.js");   // Load js to insert and get data fr
 const api = require("./routes/api.js");
 const bodyParser = require('body-parser');
 
-
 express()
     .use(bodyParser.urlencoded({ extended: false }))
     .use(bodyParser.json())
     .use(express.static(path.join(__dirname, "public")))        // Make files in public folder available
     .use("/api", api)
-    .listen(PORT, () => console.log(`Listening on ${PORT}`));   // Start server 
+    .listen(PORT, () => console.log(`Listening on ${PORT}`));   // Start server
