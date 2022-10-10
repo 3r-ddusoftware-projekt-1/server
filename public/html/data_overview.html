@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Simple data example</title>
-        <script src="../js/get_data.js" defer></script>
-    </head>
-    <body></body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple data example</title>
+    <script src="../js/get_data.js" defer></script>
+    <!-- Load Chart.js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+      defer
+    ></script>
+    <!-- Load own javascript -->
+    <script src="../js/graffer.js" defer></script>
+  </head>
+  <body>
+    <!-- Canvas where the graph can be drawn -->
+    <canvas id="time_altitude"></canvas>
+    <canvas id="temp_altitude"></canvas>
+    <canvas id="temp_pressure"></canvas>
+  </body>
 </html>
