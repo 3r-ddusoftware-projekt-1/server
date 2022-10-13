@@ -13,11 +13,45 @@
     ></script>
     <!-- Load own javascript -->
     <script src="../js/graffer.js" defer></script>
+    <style>
+      .chart1, .chart2{
+        display: flex;
+        align-items: center;
+        
+      }
+
+      .chart {
+        width: 50%;
+        padding: 5px;
+        border: solid 2px rgba(255, 99, 133, 0.4);
+        border-radius: 20px;
+        margin: 2px;
+      }
+      
+    </style>
   </head>
   <body>
-    <!-- Canvas where the graph can be drawn -->
-    <canvas id="time_altitude"></canvas>
-    <canvas id="temp_altitude"></canvas>
-    <canvas id="temp_pressure"></canvas>
+    <div class="chart-container">
+      <!-- Canvas where the graph can be drawn -->
+      <div class="chart1">
+        <div class="chart">
+          <canvas id="time_altitude"></canvas>
+        </div>
+
+        <div class="chart">
+          <canvas id="temp_altitude"></canvas>
+        </div>
+      </div>
+
+      <div class="chart2">
+        <div class="chart">
+          <canvas id="temp_pressure"></canvas>
+        </div>
+
+        <div class="chart">
+          <canvas id="pressure_altitude"></canvas>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
