@@ -12,17 +12,7 @@ let time_altitude = new Chart(graf1, {
       {
         label: "Tid vs. Højde",
         // x=time, y=altitude
-        data: [
-          { x: 10, y: 20 },
-          { x: 15, y: 15 },
-          { x: 20, y: 10 },
-          { x: 25, y: 5 },
-          { x: 30, y: -5 },
-          { x: 40, y: 30 },
-          { x: 50, y: 40 },
-          { x: 60, y: 50 },
-          { x: 70, y: 70 },
-        ],
+        data: datasets1,
         showLine: true,
         fill: false,
 
@@ -33,45 +23,41 @@ let time_altitude = new Chart(graf1, {
   },
   // Configuration options go here
   options: {
-  responsive: true,
+    responsive: true,
 
-  title: {
-    display: true,
-    text: "Tiden i forhold til Højden",
-  },
-  scales: {
-    xAxes: [
-      {
-        ticks: {
-          stepSize: 5,
+    title: {
+      display: true,
+      text: "Tiden i forhold til Højden",
+    },
+    scales: {
+      xAxes: [
+        {
+          ticks: {
+            stepSize: 5,
+          },
+          scaleLabel: {
+            display: true,
+            labelString: "Tid [s]",
+          },
         },
-        scaleLabel: {
-          display: true,
-          labelString: "Tid [s]",
+      ],
+      yAxes: [
+        {
+          type: "linear",
+          scaleLabel: {
+            display: true,
+            labelString: "Højde [m]",
+          },
         },
-      },
-    ],
-    yAxes: [
-      {
-        ticks: {
-          stepSize: 5,
-        },
-        type: "linear",
-        scaleLabel: {
-          display: true,
-          labelString: "Højde [m]",
-        },
-      },
-    ],
-  },
+      ],
+    },
 
-  elements: {
-    line: {
-      tension: 0,
+    elements: {
+      line: {
+        tension: 0,
+      },
     },
   },
-}
-
 });
 
 let temp_altitude = new Chart(graf2, {
@@ -83,17 +69,7 @@ let temp_altitude = new Chart(graf2, {
       {
         label: "Temperatur vs. Højde",
         // x=temperature, y=altitude
-        data: [
-          { x: 10, y: 20 },
-          { x: 15, y: 15 },
-          { x: 20, y: 10 },
-          { x: 25, y: 5 },
-          { x: 30, y: -5 },
-          { x: 40, y: 30 },
-          { x: 50, y: 40 },
-          { x: 60, y: 50 },
-          { x: 70, y: 70 },
-        ],
+        data: datasets2,
         showLine: true,
         fill: false,
 
@@ -124,9 +100,6 @@ let temp_altitude = new Chart(graf2, {
       ],
       yAxes: [
         {
-          ticks: {
-            stepSize: 5,
-          },
           type: "linear",
           scaleLabel: {
             display: true,
@@ -153,17 +126,7 @@ let temp_pressure = new Chart(graf3, {
       {
         label: "Temperatur vs. Tryk",
         // x=temperature, y=pressure
-        data: [
-          { x: 10, y: 20 },
-          { x: 15, y: 15 },
-          { x: 20, y: 10 },
-          { x: 25, y: 5 },
-          { x: 30, y: -5 },
-          { x: 40, y: 30 },
-          { x: 50, y: 40 },
-          { x: 60, y: 50 },
-          { x: 70, y: 70 },
-        ],
+        data: datasets3,
         showLine: true,
         fill: false,
 
@@ -194,9 +157,6 @@ let temp_pressure = new Chart(graf3, {
       ],
       yAxes: [
         {
-          ticks: {
-            stepSize: 5,
-          },
           type: "linear",
           scaleLabel: {
             display: true,
@@ -214,6 +174,8 @@ let temp_pressure = new Chart(graf3, {
   },
 });
 
+
+
 let pressure_altitude = new Chart(graf4, {
   // The type of chart we want to create
   type: "scatter",
@@ -223,17 +185,8 @@ let pressure_altitude = new Chart(graf4, {
       {
         label: "Tryk vs. Højde",
         // x=pressure, y=altitude
-        data: [
-          { x: 10, y: 20 },
-          { x: 15, y: 15 },
-          { x: 20, y: 10 },
-          { x: 25, y: 5 },
-          { x: 30, y: -5 },
-          { x: 40, y: 30 },
-          { x: 50, y: 40 },
-          { x: 60, y: 50 },
-          { x: 70, y: 70 },
-        ],
+        data: datasets4,
+
         showLine: true,
         fill: false,
 
@@ -264,9 +217,6 @@ let pressure_altitude = new Chart(graf4, {
       ],
       yAxes: [
         {
-          ticks: {
-            stepSize: 5,
-          },
           type: "linear",
           scaleLabel: {
             display: true,
@@ -283,3 +233,7 @@ let pressure_altitude = new Chart(graf4, {
     },
   },
 });
+
+
+
+
