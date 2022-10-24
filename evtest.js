@@ -7,11 +7,13 @@ let sockets = [];
 
 websocket.on("connection", socket => {
 	sockets.push(socket);
+    data.get_all().then((rows) => {
+        socket.send(JSON.stringify(rows))
+    });
 });
 
 data.eventEmitter.on("cansat_received_datapoint", (datapoint) => {
     for (const socket of sockets) {
-        console.log("Sending...");
-        socket.send(JSON.stringify(datapoint));
+        socket.send(JSON.stringify([datapoint]));
     }
 });

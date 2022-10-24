@@ -25,6 +25,11 @@ async function insert(datapoint) {
     return res;
 }
 
+async function get_all() {
+    const res = await pool.query("SELECT * FROM datapoints");
+    return res.rows;
+}
+
 init();
 
-module.exports = {insert, eventEmitter};
+module.exports = {insert, get_all, eventEmitter};
