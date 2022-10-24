@@ -6,12 +6,13 @@ router.post("/upload_data", async (req, res) => {
     try {
         body = req.body; // Automatically parsed by bodyParser
 
-
         // Request validation
-        if (body.datapoints === undefined) {
-            res.status(400).json({success: false, message: "Invalid request: No 'datapoints' key"});
+        if (body.timestamp === undefined) {
+            res.status(400).json({success: false, message: "Invalid request: No 'timestamp' key"});
             return;
         }
+
+        data.insert(body)
 
         res.json(
             {
@@ -20,6 +21,7 @@ router.post("/upload_data", async (req, res) => {
             }
         );
     } catch (error) {
+        console.error(error);
         res.status(500).json({
             success: false,
             message: "Internal server error"
