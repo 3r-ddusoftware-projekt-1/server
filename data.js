@@ -1,4 +1,6 @@
 const fs = require("fs");
+const EventEmitter = require('events');
+const eventEmitter = new EventEmitter();
 const { Pool } = require("pg");
 
 let connectionstring;
@@ -17,11 +19,12 @@ function init() {
     pool.query("CREATE TABLE IF NOT EXISTS datapoints (timestamp bigint, temperature float)");
 }
 
-async function insert(data_packet) {
-    const res = await pool.query("INSERT INTO datapoints(timestamp, temperature) VALUES ($1, $2)", [data_packet.timestamp, data_packet.temperature]);
+async function insert(datapoint) {
+    eventEmitter.emit('cansat_received_datapoint', datapoint);
+    const res = await pool.query("INSERT INTO datapoints(timestamp, temperature) VALUES ($1, $2)", [datapoint.timestamp, datapoint.temperature]);
     return res;
 }
 
 init();
 
-module.exports = {insert};
+module.exports = {insert, eventEmitter};

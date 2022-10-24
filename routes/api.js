@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const data = require("./data.js");
+const data = require("../data.js");
 
 router.post("/upload_data", async (req, res) => {
     try {

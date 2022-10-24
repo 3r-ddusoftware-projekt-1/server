@@ -1,8 +1,9 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
-const data = require("./routes/data.js");   // Load js to insert and get data from db
+const data = require("./data.js");   // Load js to insert and get data from db
 const api = require("./routes/api.js");
+const evtest = require("./evtest.js");
 const bodyParser = require('body-parser');
 
 express()
