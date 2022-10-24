@@ -11,6 +11,7 @@ let time_altitude = new Chart(graf1, {
     datasets: [
       {
         label: "Tid vs. Højde",
+        // x=time, y=altitude
         data: [
           { x: 10, y: 20 },
           { x: 15, y: 15 },
@@ -32,44 +33,45 @@ let time_altitude = new Chart(graf1, {
   },
   // Configuration options go here
   options: {
-    responsive: true,
+  responsive: true,
 
-    title: {
-      display: true,
-      text: "Tiden i forhold til Højden",
-    },
-    scales: {
-      xAxes: [
-        {
-          ticks: {
-            stepSize: 5,
-          },
-          scaleLabel: {
-            display: true,
-            labelString: "Tid [s]",
-          },
+  title: {
+    display: true,
+    text: "Tiden i forhold til Højden",
+  },
+  scales: {
+    xAxes: [
+      {
+        ticks: {
+          stepSize: 5,
         },
-      ],
-      yAxes: [
-        {
-          ticks: {
-            stepSize: 5,
-          },
-          type: "linear",
-          scaleLabel: {
-            display: true,
-            labelString: "Højde [m]",
-          },
+        scaleLabel: {
+          display: true,
+          labelString: "Tid [s]",
         },
-      ],
-    },
-
-    elements: {
-      line: {
-        tension: 0,
       },
+    ],
+    yAxes: [
+      {
+        ticks: {
+          stepSize: 5,
+        },
+        type: "linear",
+        scaleLabel: {
+          display: true,
+          labelString: "Højde [m]",
+        },
+      },
+    ],
+  },
+
+  elements: {
+    line: {
+      tension: 0,
     },
   },
+}
+
 });
 
 let temp_altitude = new Chart(graf2, {
@@ -80,6 +82,7 @@ let temp_altitude = new Chart(graf2, {
     datasets: [
       {
         label: "Temperatur vs. Højde",
+        // x=temperature, y=altitude
         data: [
           { x: 10, y: 20 },
           { x: 15, y: 15 },
@@ -149,6 +152,7 @@ let temp_pressure = new Chart(graf3, {
     datasets: [
       {
         label: "Temperatur vs. Tryk",
+        // x=temperature, y=pressure
         data: [
           { x: 10, y: 20 },
           { x: 15, y: 15 },
@@ -218,6 +222,7 @@ let pressure_altitude = new Chart(graf4, {
     datasets: [
       {
         label: "Tryk vs. Højde",
+        // x=pressure, y=altitude
         data: [
           { x: 10, y: 20 },
           { x: 15, y: 15 },
