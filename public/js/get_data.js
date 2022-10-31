@@ -1,16 +1,16 @@
 const el = document.querySelector("body");
 
 fetch("/data/get")
-  .then((response) => response.json())
-  .then((data) => {
-    for (row of data.results) {
-      el.innerHTML += "<br> " + row.value;
-    }
-  });
+    .then((response) => response.json())
+    .then((data) => {
+        for (row of data.results) {
+            el.innerHTML += "<br> " + row.value;
+        }
+    });
 
 // x=time, y=altitude
 let datasets1 = [
-  /*{ x: 5, y: 20 },
+    /*{ x: 5, y: 20 },
   { x: 15, y: 15 },
   { x: 20, y: 10 },
   { x: 25, y: 5 },
@@ -23,7 +23,7 @@ let datasets1 = [
 
 // x=temperature, y=altitude
 let datasets2 = [
-  /*{ x: 10, y: 20 },
+    /*{ x: 10, y: 20 },
   { x: 15, y: 15 },
   { x: 20, y: 10 },
   { x: 25, y: 22 },
@@ -36,7 +36,7 @@ let datasets2 = [
 
 // x=temperature, y=pressure
 let datasets3 = [
- /* { x: 10, y: 20 },
+    /* { x: 10, y: 20 },
   { x: 15, y: 15 },
   { x: 20, y: 10 },
   { x: 25, y: 5 },
@@ -48,7 +48,7 @@ let datasets3 = [
 ];
 // x=pressure, y=altitude
 let datasets4 = [
-  /*{ x: 10, y: 20 },
+    /*{ x: 10, y: 20 },
   { x: 15, y: 15 },
   { x: 20, y: 10 },
   { x: 25, y: 5 },
@@ -59,27 +59,42 @@ let datasets4 = [
   { x: 70, y: 70 },*/
 ];
 
-let time = [1,2,3,4,5,6,7,8,9];
 
-let altitude = [11,12,13,14,15,16,17,18,19];
+// Opsætning de forskellige målte værdier
+let time = [1];
 
-let temperature = [21,22,23,24,25,26,27,28,29];
+let altitude = [2];
 
-let pressure = [31,32,33,34,35,36,37,38,39];
+let temperature = [3];
 
-const btn = document.querySelector("button");
+let pressure = [4];
 
-btn.addEventListener("click", function () {
-    for(i=0; i<time.length; i++){
-        
-        datasets1.push({ x: time[i], y: altitude[i] });
-        datasets2.push({ x: temperature[i], y: altitude[i] });
-        datasets3.push({ x: temperature[i], y: pressure[i] });
-        datasets4.push({ x: pressure[i], y: altitude[i] });
-    }
+let i = 0;
+
+// Opdatere graferne med nye værdier
+function updateData(time, altitude, temperature, pressure) {
+    console.log(altitude);
+    datasets1.push({ x: time, y: altitude });
+    datasets2.push({ x: temperature, y: altitude });
+    datasets3.push({ x: temperature, y: pressure });
+    datasets4.push({ x: pressure, y: altitude });
+
+    console.log(datasets3);
     pressure_altitude.update();
     temp_altitude.update();
     temp_pressure.update();
     time_altitude.update();
-    console.log(datasets4);
-});
+}
+const btn = document.querySelector("button");
+
+btn.addEventListener("click", getData);
+// Få random tal til afprøvning af graf - og simulering af hentning af data
+function getData() {
+    let x = Math.random() * 10;
+    let y = Math.random() * 10;
+    let z = Math.random() * 10;
+    // i altal gange trykt på knappen
+    i++;
+    console.log(x);
+    updateData(i, x, y, z);
+}
