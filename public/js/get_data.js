@@ -90,9 +90,9 @@ const btn = document.querySelector("button");
 btn.addEventListener("click", getData);
 // Få random tal til afprøvning af graf - og simulering af hentning af data
 function getData() {
-    let x = Math.random() * 10;
-    let y = Math.random() * 10;
-    let z = Math.random() * 10;
+    let x = Math.random() * 100;
+    let y = Math.random() * 100;
+    let z = Math.random() * 100;
     // i altal gange trykt på knappen
     i++;
     console.log(x);

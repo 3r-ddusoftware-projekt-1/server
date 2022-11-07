@@ -1,3 +1,7 @@
+Chart.defaults.global.defaultFontColor = "#000";
+Chart.defaults.global.defaultFontStyle = 550;
+
+
 // setup block
 const data1 = {
     datasets: [
