@@ -1,6 +1,14 @@
+// Til at gøre alt skriften sort og tykkere
 Chart.defaults.global.defaultFontColor = "#000";
 Chart.defaults.global.defaultFontStyle = 550;
 
+// Sørger for at grafen ikke bliver udfyldt under stregen
+Chart.defaults.global.elements.line.fill = false;
+// Sørger for at stregen ikke buer
+Chart.defaults.global.elements.line.tension = 0;
+
+Chart.defaults.global.title.padding = 2;
+Chart.defaults.global.animation = false;
 
 // setup block
 const data1 = {
@@ -9,8 +17,9 @@ const data1 = {
             label: "Tid vs. Højde",
             // x=time, y=altitude
             data: datasets1,
+
+            //Sørger for at den laver en streg mellem punkterne
             showLine: true,
-            fill: false,
 
             backgroundColor: "rgb(255, 99, 132)",
             borderColor: "rgb(255, 99, 132)",
@@ -24,8 +33,9 @@ const data2 = {
             label: "Temperatur vs. Højde",
             // x=temperature, y=altitude
             data: datasets2,
+
+            //Sørger for at den laver en streg mellem punkterne
             showLine: true,
-            fill: false,
 
             backgroundColor: "rgb(0, 102, 255)",
             borderColor: "rgb(0, 102, 255)",
@@ -39,8 +49,9 @@ const data3 = {
             label: "Temperatur vs. Tryk",
             // x=temperature, y=pressure
             data: datasets3,
+
+            //Sørger for at den laver en streg mellem punkterne
             showLine: true,
-            fill: false,
 
             backgroundColor: "rgb(51, 204, 51)",
             borderColor: "rgb(51, 204, 51)",
@@ -55,8 +66,8 @@ const data4 = {
             // x=pressure, y=altitude
             data: datasets4,
 
+            //Sørger for at den laver en streg mellem punkterne
             showLine: true,
-            fill: false,
 
             backgroundColor: "rgb(153, 51, 255)",
             borderColor: "rgb(153, 51, 255)",
@@ -72,8 +83,8 @@ const config1 = {
     data: data1,
     // Configuration options go here
     options: {
-        responsive: true,
         title: {
+            //viser overskriften
             display: true,
             text: "Tiden i forhold til Højden",
         },
@@ -81,25 +92,23 @@ const config1 = {
             xAxes: [
                 {
                     scaleLabel: {
+                        // viser navnet for x-aksen
                         display: true,
                         labelString: "Tid [s]",
+                        padding: 1,
                     },
                 },
             ],
             yAxes: [
                 {
-                    type: "linear",
                     scaleLabel: {
+                        //viser navnet for y-aksen
                         display: true,
                         labelString: "Højde [m]",
+                        padding: 2,
                     },
                 },
             ],
-        },
-        elements: {
-            line: {
-                tension: 0,
-            },
         },
     },
 };
@@ -111,8 +120,6 @@ const config2 = {
     data: data2,
     // Configuration options go here
     options: {
-        responsive: true,
-
         title: {
             display: true,
             text: "Temperaturen i forhold til Højden",
@@ -123,24 +130,19 @@ const config2 = {
                     scaleLabel: {
                         display: true,
                         labelString: "Temperatur [℃]",
+                        padding: 1,
                     },
                 },
             ],
             yAxes: [
                 {
-                    type: "linear",
                     scaleLabel: {
                         display: true,
                         labelString: "Højde [m]",
+                        padding: 2,
                     },
                 },
             ],
-        },
-
-        elements: {
-            line: {
-                tension: 0,
-            },
         },
     },
 };
@@ -151,8 +153,6 @@ const config3 = {
     data: data3,
     // Configuration options go here
     options: {
-        responsive: true,
-
         title: {
             display: true,
             text: "Temperaturen i forhold til Trykket",
@@ -163,24 +163,19 @@ const config3 = {
                     scaleLabel: {
                         display: true,
                         labelString: "Temperatur [℃]",
+                        padding: 1,
                     },
                 },
             ],
             yAxes: [
                 {
-                    type: "linear",
                     scaleLabel: {
                         display: true,
                         labelString: "Tryk",
+                        padding: 2,
                     },
                 },
             ],
-        },
-
-        elements: {
-            line: {
-                tension: 0,
-            },
         },
     },
 };
@@ -191,8 +186,6 @@ const config4 = {
     data: data4,
     // Configuration options go here
     options: {
-        responsive: true,
-
         title: {
             display: true,
             text: "Trykket i forhold til højden",
@@ -203,24 +196,19 @@ const config4 = {
                     scaleLabel: {
                         display: true,
                         labelString: "Tryk",
+                        padding: 1,
                     },
                 },
             ],
             yAxes: [
                 {
-                    type: "linear",
                     scaleLabel: {
                         display: true,
                         labelString: "Højde [m]",
+                        padding: 2,
                     },
                 },
             ],
-        },
-
-        elements: {
-            line: {
-                tension: 0,
-            },
         },
     },
 };
