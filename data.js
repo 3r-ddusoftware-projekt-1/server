@@ -16,6 +16,7 @@ const pool = new Pool({
 });
 
 function init() {
+    console.log("hi");
     pool.query("CREATE TABLE IF NOT EXISTS datapoints (timestamp bigint, temperature float)");
 }
 
