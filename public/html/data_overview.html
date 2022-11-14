@@ -1,76 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple data example</title>
-    <script src="../js/get_data.js" defer></script>
-    <!-- Load Chart.js -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
-      defer
-    ></script>
-    <!-- Load own javascript -->
-    <script src="../js/graffer.js" defer></script>
-    <script src="../js/websocket_client.js" defer></script>
-  </head>
-  <style>
-    .chart1,
-    .chart2 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple data example</title>
+        <script src="../js/get_data.js" defer></script>
+        <!-- Load Chart.js -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+            defer
+        ></script>
+        <!-- Load own javascript -->
+        <script src="../js/graffer.js" defer></script>
+        <script src="../js/websocket_client.js" defer></script>
+        <!-- 
+            <script>
+            function resize() {
+                var w = window.outerWidth;
+                if (w < 1230) {
+                  .chart1, .chart2{
+                    /**/
+                  }
 
-    }
 
-    .chart {
-      width: 46%;
-      padding: 5px;
-      border: solid 2px rgba(255, 99, 133, 0.4);
-      border-radius: 20px;
-      margin: 2px;
-    }
+                }
+                /*w = 1230 */
+            }
+            </script>
+        -->
+    </head>
+    <style>
+        .chart1,
+        .chart2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .button{
-      display: flex;
-      align-items: center;
-      border-radius: 4px;
-      background-color: #f41e8d;
-      border: none;
-      color: #FFFFFF;
-      font-size: 15px;
-      padding: 10px;
-      width: 20%;
-      cursor: pointer;
-      margin-top: 5px;
-      margin-left: 40%;
-      justify-content: center;
-    }
-  </style>
-  <body>
-    <div class="chart-container">
-      <!-- Canvas where the graph can be drawn -->
-      <div class="chart1">
-        <div class="chart">
-          <canvas id="time_altitude"></canvas>
+        .chart {
+            width: 46%;
+            padding: 5px;
+            border: solid 2px rgba(255, 99, 133, 0.4);
+            border-radius: 20px;
+            margin: 2px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+            background-color: #f41e8d;
+            border: none;
+            color: #ffffff;
+            font-size: 15px;
+            padding: 10px;
+            width: 20%;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-left: 40%;
+            justify-content: center;
+        }
+    </style>
+    <body onresize="resize()">
+        <div class="chart-container">
+            <!-- Canvas where the graph can be drawn -->
+            <div class="chart1">
+                <div class="chart">
+                    <canvas id="time_altitude"></canvas>
+                </div>
+
+                <div class="chart">
+                    <canvas id="temp_altitude"></canvas>
+                </div>
+            </div>
+
+            <div class="chart2">
+                <div class="chart">
+                    <canvas id="temp_pressure"></canvas>
+                </div>
+
+                <div class="chart">
+                    <canvas id="pressure_altitude"></canvas>
+                </div>
+            </div>
         </div>
-
-        <div class="chart">
-          <canvas id="temp_altitude"></canvas>
-        </div>
-      </div>
-
-      <div class="chart2">
-        <div class="chart">
-          <canvas id="temp_pressure"></canvas>
-        </div>
-
-        <div class="chart">
-          <canvas id="pressure_altitude"></canvas>
-        </div>
-      </div>
-    </div>
-    <button class="button" >Add Data</button>
-  </body>
+        <button class="button">Add Data</button>
+    </body>
 </html>
