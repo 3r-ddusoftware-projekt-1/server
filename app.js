@@ -6,7 +6,7 @@ const api = require("./routes/api.js");
 const evtest = require("./evtest.js");
 const bodyParser = require("body-parser");
 
-data.insert({ timestamp: 0, temperature: 10 }).then(() => {
+data.insert({ timestamp: 5, temperature: 25 }).then(() => {
     data.get_all().then((data) => console.log(data));
 });
 

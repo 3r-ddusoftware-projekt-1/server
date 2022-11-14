@@ -2,13 +2,16 @@ const express = require("express");
 const router = express.Router();
 const data = require("../data.js");
 
+// DEFINITION TO GET DATA
+router.get("/get", async (req, res) => {
+    data.get_all().then((results) => res.send(results));
+});
+
 router.get("/upload", async (req, res) => {
     let temp = req.query.temp;
     console.log(temp);
     res.send("ok");
 });
-
-
 
 router.post("/upload_data", async (req, res) => {
     try {
