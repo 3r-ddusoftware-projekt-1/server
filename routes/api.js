@@ -7,9 +7,19 @@ router.get("/get", async (req, res) => {
     data.get_all().then((results) => res.send(results));
 });
 
+// Kan give værdier ved hjælp af url
 router.get("/upload", async (req, res) => {
+    let time = req.query.time;
+    let alt = req.query.alt;
     let temp = req.query.temp;
+    let press = req.query.press;
     console.log(temp);
+    data.insert({
+        timestamp: time,
+        altitude: alt,
+        temperature: temp,
+        pressure: press,
+    });
     res.send("ok");
 });
 
