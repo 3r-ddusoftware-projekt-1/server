@@ -17,12 +17,17 @@ const pool = new Pool({
 
 function init() {
     console.log("hi");
-    pool.query("CREATE TABLE IF NOT EXISTS datapoints (timestamp bigint, temperature float)");
+    pool.query(
+        "CREATE TABLE IF NOT EXISTS datapoints (timestamp bigint, altitude float, temperature float, pressure float)"
+    );
 }
 
 async function insert(datapoint) {
     eventEmitter.emit('cansat_received_datapoint', datapoint);
-    const res = await pool.query("INSERT INTO datapoints(timestamp, temperature) VALUES ($1, $2)", [datapoint.timestamp, datapoint.temperature]);
+    const res = await pool.query(
+        "INSERT INTO datapoints(timestamp, altitude, temperature, pressure) VALUES ($1, $2, $3, $4)",
+        [datapoint.timestamp, datapoint.altitude,datapoint.temperature, datapoint.pressure]
+    );
     return res;
 }
 

@@ -20,18 +20,23 @@ let datasets3 = [];
 // x=pressure, y=altitude
 let datasets4 = [];
 
-// Opsætning de forskellige målte værdier
+/* // Opsætning de forskellige målte værdier
 let time = [];
 let altitude = [];
 let temperature = [];
-let pressure = [];
+let pressure = []; */
 
 function updateDataList(data) {
     console.log(data);
     console.log(data.length);
 
     for (i in data) {
-        updateData([data[i].timestamp], [i], [data[i].temperature], [i]);
+        updateData(
+            [data[i].timestamp],
+            [data[i].altitude],
+            [data[i].temperature],
+            [data[i].pressure]
+        );
     }
 }
 
