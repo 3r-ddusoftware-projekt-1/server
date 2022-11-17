@@ -6,11 +6,11 @@ const api = require("./routes/api.js");
 const evtest = require("./evtest.js");
 const bodyParser = require("body-parser");
 
-data.insert({ timestamp: 17, altitude: 6, temperature: 45, pressure: 10 }).then(
+/* data.insert({ timestamp: 17, altitude: 6, temperature: 45, pressure: 10 }).then(
     () => {
         data.get_all().then((data) => console.log(data));
     }
-);
+); */
 
 express()
     .use(bodyParser.urlencoded({ extended: false }))
