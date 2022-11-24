@@ -10,7 +10,7 @@ function resize() {
     var lenght1 = grafBoth.length;
     var lenght2 = graf.length;
 
-    if (window.matchMedia("(max-width: 600px)").matches) {
+    if (window.matchMedia("(max-width: 750px)").matches) {
         for (i = 0; i < lenght1; i++) {
             // Sørger for at graferne ligger under hinanden
             grafBoth[i].style.flexWrap = "wrap";

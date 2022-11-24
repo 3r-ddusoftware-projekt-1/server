@@ -6,8 +6,7 @@
 }
 
 .chart {
-    width: 46%;
-    padding: 5px;
+    padding: 2px;
     border: solid 2px rgba(255, 99, 133, 0.4);
     border-radius: 20px;
     margin: 2px;
