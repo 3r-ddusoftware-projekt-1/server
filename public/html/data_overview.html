@@ -6,6 +6,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Simple data example</title>
         <script src="../js/get_data.js" defer></script>
+        <!-- Load Chart.js -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+            defer
+        ></script>
+        <!-- Load own javascript -->
+        <script src="../js/grafer.js" defer></script>
+        <script src="../js/websocket_client.js" defer></script>
+        <script src="../js/resize.js" defer></script>
+        <link rel="stylesheet" href="../css/style.css" />
     </head>
-    <body></body>
+    <body>
+        <div class="chart-container">
+            <!-- Canvas where the graph can be drawn -->
+            <div class="chart1">
+                <div class="chart">
+                    <canvas id="time_altitude"></canvas>
+                </div>
+
+                <div class="chart">
+                    <canvas id="temp_altitude"></canvas>
+                </div>
+            </div>
+
+            <div class="chart2">
+                <div class="chart">
+                    <canvas id="temp_pressure"></canvas>
+                </div>
+
+                <div class="chart">
+                    <canvas id="pressure_altitude"></canvas>
+                </div>
+            </div>
+        </div>
+        <button class="button">Add Data</button>
+    </body>
 </html>
+
+<!--
+    TODO: 
+    Info boks til information om hvad graferne indeholder, samt hvad man kan få ud af dem.
+    Information om hvor dataene kommer fra osv.
+
+    Tabel over tallene fra graferne, som ligger under grafen, måske også tryk på knap for at vise tabel
+-->
